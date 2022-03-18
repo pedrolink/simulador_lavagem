@@ -1,2 +1,13 @@
-# simulador_lavagem
-Simulador de probabilidade de carros para lavagem. Trabalho desenvolvido para entrega na universidade.
+## Utilização
+
+Utilize o navegador de sua escolha para executar o arquivo principal do projeto "index.html".
+
+## Ferramentas
+
+* JavaScript
+* HTML
+* CSS
+
+## Desenvolvedor
+
+Pedro Link
