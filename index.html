@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+
+    <script type="text/javascript" src="script.js"></script>
+
+    <title>Trabalho Simulação</title>
+</head>
+
+<body>
+    <div class="div_simulator">
+        <form class="row g-3">
+            <div class="col-md-12">
+                <label class="form-label">Tempo a ser simulado:</label>
+                <input type="number" class="form-control" id="tempo_simulado">
+            </div>
+
+
+            <!-- VALORES CHEGADAS -->
+            <div class="col-3">
+            </div>
+            <div class="col-3" id="label_ABC">
+                <label class="form-label">A</label>
+            </div>
+            <div class="col-3" id="label_ABC">
+                <label class="form-label">B</label>
+            </div>
+            <div class="col-3" id="label_ABC">
+                <label class="form-label">C</label>
+            </div>
+            <div class="col-3">
+                <label>Chegadas (λ):</label>
+            </div>
+            <div class="col-3">
+                <input type="number" class="form-control" id="valorA_chegada">
+            </div>
+            <div class="col-3">
+                <input type="number" class="form-control" id="valorB_chegada">
+            </div>
+            <div class="col-3">
+                <input type="number" class="form-control" id="valorC_chegada">
+            </div>
+
+            <!-- VALORES SERVIÇOS -->
+            <div class="col-3">
+                <label>Serviços (µ):</label>
+            </div>
+            <div class="col-3">
+                <input type="number" class="form-control" id="valorA_servico">
+            </div>
+            <div class="col-3">
+                <input type="number" class="form-control" id="valorB_servico">
+            </div>
+            <div class="col-3">
+                <input type="number" class="form-control" id="valorC_servico">
+            </div>
+
+            <div class="col-12">
+                <hr>
+            </div>
+
+            <!-- VALORES CHEGADAS -->
+            <div class="col-3">
+            </div>
+            <div class="col-3" id="label_ABC">
+                <label class="form-label">A</label>
+            </div>
+            <div class="col-3" id="label_ABC">
+                <label class="form-label">B</label>
+            </div>
+            <div class="col-3" id="label_ABC">
+                <label class="form-label">C</label>
+            </div>
+            <div class="col-3">
+                <label>Chegadas (λ):</label>
+            </div>
+            <div class="col-3">
+                <input type="number" class="form-control" id="disableA_chegada" disabled>
+            </div>
+            <div class="col-3">
+                <input type="number" class="form-control" id="disableB_chegada" disabled>
+            </div>
+            <div class="col-3">
+                <input type="number" class="form-control" id="disableC_chegada" disabled>
+            </div>
+
+            <!-- VALORES SERVIÇOS -->
+            <div class="col-3">
+                <label>Serviços (µ):</label>
+            </div>
+            <div class="col-3">
+                <input type="number" class="form-control" id="disableA_servico" disabled>
+            </div>
+            <div class="col-3">
+                <input type="number" class="form-control" id="disableB_servico" disabled>
+            </div>
+            <div class="col-3">
+                <input type="number" class="form-control" id="disableC_servico" disabled>
+            </div>
+        </form>
+        <!-- BOTÃO SIMULAR -->
+        <div class="functions_buttons">
+            <button onclick="simula_valores()" class="btn btn-primary">Simular</button>
+            <button onclick="limpa_valores()" class="btn btn-danger">Limpar</button>
+        </div>
+    </div>
+
+
+    <!-- CALCULOS -->
+    <div class="div_calculos">
+        <form class="row g-3">
+            <!-- NÚMERO MÉDIO DE CARROS NO SISTEMA -->
+            <div class="col-3">
+            </div>
+            <div class="col-3" id="label_ABC">
+                <label class="form-label">A</label>
+            </div>
+            <div class="col-3" id="label_ABC">
+                <label class="form-label">B</label>
+            </div>
+            <div class="col-3" id="label_ABC">
+                <label class="form-label">C</label>
+            </div>
+            <div class="col-3">
+                <label class="label_calculos"><b>Número médio de carros no sistema:</b> <strong class="formula">L = λ /
+                        µ - λ</strong></label>
+            </div>
+            <div class="col-3">
+                <input type="number" class="form-control" id="numero_medio_A" disabled>
+            </div>
+            <div class="col-3">
+                <input type="number" class="form-control" id="numero_medio_B" disabled>
+            </div>
+            <div class="col-3">
+                <input type="number" class="form-control" id="numero_medio_C" disabled>
+            </div>
+
+            <!-- Tempo médio despendido no sistema -->
+            <div class="col-3">
+                <label class="label_calculos"><b>Tempo médio despendido no sistema:</b> <strong class="formula">W = 1 /
+                        µ - λ</strong></label>
+            </div>
+            <div class="col-3">
+                <input type="number" class="form-control" id="tempo_medio_A" disabled>
+            </div>
+            <div class="col-3">
+                <input type="number" class="form-control" id="tempo_medio_B" disabled>
+            </div>
+            <div class="col-3">
+                <input type="number" class="form-control" id="tempo_medio_C" disabled>
+            </div>
+
+            <!-- Taxa média de ocupação do servidor -->
+            <div class="col-3">
+                <label class="label_calculos"><b>Taxa média de ocupação do servidor:</b> <strong class="formula">p = λ /
+                        µ</strong></label>
+            </div>
+            <div class="col-3">
+                <input type="number" class="form-control" id="taxa_media_A" disabled>
+            </div>
+            <div class="col-3">
+                <input type="number" class="form-control" id="taxa_media_B" disabled>
+            </div>
+            <div class="col-3">
+                <input type="number" class="form-control" id="taxa_media_C" disabled>
+            </div>
+        </form>
+    </div>
+
+    <!-- TABELA -->
+    <div class="div_probabilidade">
+        <!-- NÚMERO MÉDIO DE CARROS NO SISTEMA -->
+        <label class="form-label">Probabilidade de clientes (MAX):</label>
+        <strong class="formula">Pn = (1 - (λ / µ)) * (λ / µ) ^ n)</strong>
+        <input type="number" class="form-control" onkeyup="monta_tabela()" id="probabilidade_clientes">
+    </div>
+
+    <div class="div_tabela_calculos">
+        <table id="tabela_calculos" class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">N</th>
+                    <th scope="col">P(x)</th>
+                    <th scope="col">Cenário A</th>
+                    <th scope="col">Cenário B</th>
+                    <th scope="col">Cenário C</th>
+                </tr>
+            </thead>
+            <tbody id="body_tabela_calculos">
+            </tbody>
+        </table>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start" id="footer_dev">
+        <div class="text-center p-3" style="background-color: rgba(172, 148, 148, 0.385);">
+            <a class="text-dark" target="_blank" href="https://github.com/pedrolink">Develop by Pedro Link</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

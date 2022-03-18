@@ -1,0 +1,53 @@
+.div_calculos {
+    width: 70%;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.div_probabilidade{
+    width: 70%;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.div_simulator {
+    width: 35%;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.div_tabela_calculos {
+    width: 70%;
+    margin-left: 30px;
+    margin-top: 15px;
+}
+
+.formula {
+    color: red;
+}
+
+.functions_buttons {
+    margin-top: 20px;
+    margin-left: -3px;
+}
+
+.label_calculos {
+    font-size: 13px;
+}
+
+#tempo_simulado {
+    width: 30%;
+}
+
+#label_ABC {
+    text-align: center;
+}
+
+#footer_dev {
+    text-align: center;
+    margin-top: 120px;
+}
+
+#probabilidade_clientes {
+    width: 17%;
+}
